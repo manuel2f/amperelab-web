@@ -93,7 +93,7 @@
   openVideoBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const videoSrc = btn.getAttribute('data-video-src') || '/assets/video/demo-720p.mp4';
+      const videoSrc = btn.getAttribute('data-video-src');
       const youtubeId = btn.getAttribute('data-youtube-id');
       if (youtubeId) {
         openVideo(youtubeId, true);
