@@ -56,22 +56,29 @@
     });
   }
 
-  // --- YOUTUBE VIDEO MODAL ---
+  // --- VIDEO MODAL ---
   const modalBackdrop = document.querySelector('[data-video-modal]');
   const openVideoBtns = document.querySelectorAll('[data-open-video]');
   const closeVideoBtn = document.querySelector('[data-close-video]');
   const videoFrameContainer = document.querySelector('[data-video-frame]');
 
-  function openVideo(youtubeId) {
+  function openVideo(videoSrc, isYoutube = false) {
     if (!modalBackdrop || !videoFrameContainer) return;
-    // Embed only when user clicks to prevent slow page load and background tracking
-    videoFrameContainer.innerHTML = `
-      <iframe 
-        src="https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0" 
-        title="AmpereLab Demo" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>`;
+    if (isYoutube) {
+      videoFrameContainer.innerHTML = `
+        <iframe 
+          src="https://www.youtube-nocookie.com/embed/${videoSrc}?autoplay=1&rel=0" 
+          title="AmpereLab Demo" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>`;
+    } else {
+      videoFrameContainer.innerHTML = `
+        <video controls autoplay playsinline style="width:100%;height:100%;object-fit:contain;background:#000;">
+          <source src="${videoSrc}" type="video/mp4">
+          Tu navegador no soporta el formato de vídeo.
+        </video>`;
+    }
     modalBackdrop.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   }
@@ -86,8 +93,13 @@
   openVideoBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const videoId = btn.getAttribute('data-youtube-id') || 'dQw4w9WgXcQ';
-      openVideo(videoId);
+      const videoSrc = btn.getAttribute('data-video-src') || '/assets/video/demo-720p.mp4';
+      const youtubeId = btn.getAttribute('data-youtube-id');
+      if (youtubeId) {
+        openVideo(youtubeId, true);
+      } else {
+        openVideo(videoSrc, false);
+      }
     });
   });
 

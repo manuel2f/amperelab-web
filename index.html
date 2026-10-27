@@ -124,11 +124,11 @@
           </a>
 
           <!-- Video button (trigger modal) -->
-          <button class="btn btn-secondary" type="button" data-open-video data-youtube-id="dQw4w9WgXcQ">
+          <button class="btn btn-secondary" type="button" data-open-video data-video-src="/assets/video/demo-720p.mp4">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <polygon points="5 3 19 12 5 21 5 3"></polygon>
             </svg>
-            Watch Demo (1 min)
+            Watch Demo (26s)
           </button>
         </div>
 
@@ -139,7 +139,11 @@
               <img src="/assets/img/en/2.png" alt="Live wattage telemetry graph" width="240" height="480">
             </div>
             <div class="phone-mockup mockup-main">
-              <img src="/assets/img/en/1.png" alt="AmpereLab radial real-time power meter" width="290" height="580">
+              <video class="mockup-video" autoplay loop muted playsinline poster="/assets/video/poster.jpg">
+                <source src="/assets/video/demo.webm" type="video/webm">
+                <source src="/assets/video/demo.mp4" type="video/mp4">
+                <img src="/assets/img/en/1.png" alt="AmpereLab radial real-time power meter" width="290" height="580">
+              </video>
             </div>
             <div class="phone-mockup mockup-right">
               <img src="/assets/img/en/4.png" alt="Charger ranking benchmark list" width="240" height="480">

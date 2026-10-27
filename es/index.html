@@ -124,11 +124,11 @@
           </a>
 
           <!-- Botón de Vídeo Demo -->
-          <button class="btn btn-secondary" type="button" data-open-video data-youtube-id="dQw4w9WgXcQ">
+          <button class="btn btn-secondary" type="button" data-open-video data-video-src="/assets/video/demo-720p.mp4">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <polygon points="5 3 19 12 5 21 5 3"></polygon>
             </svg>
-            Ver demo (1 min)
+            Ver demo (26s)
           </button>
         </div>
 
@@ -139,7 +139,11 @@
               <img src="/assets/img/es/2.png" alt="Gráfica en tiempo real de los últimos 90 segundos" width="240" height="480">
             </div>
             <div class="phone-mockup mockup-main">
-              <img src="/assets/img/es/1.png" alt="Medidor radial en vivo de vatios de AmpereLab" width="290" height="580">
+              <video class="mockup-video" autoplay loop muted playsinline poster="/assets/video/poster.jpg">
+                <source src="/assets/video/demo.webm" type="video/webm">
+                <source src="/assets/video/demo.mp4" type="video/mp4">
+                <img src="/assets/img/es/1.png" alt="Medidor radial en vivo de vatios de AmpereLab" width="290" height="580">
+              </video>
             </div>
             <div class="phone-mockup mockup-right">
               <img src="/assets/img/es/4.png" alt="Ranking comparativo de cargadores" width="240" height="480">
