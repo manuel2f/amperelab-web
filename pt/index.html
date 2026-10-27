@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AmpereLab · Meça os watts reais de carga & compare carregadores</title>
+  <meta name="description" content="App Android para medir a potência real de carga e comparar carregadores e cabos USB-C com testes objetivos. Sem root, sem ADB, 100% privado.">
+  
+  <link rel="canonical" href="https://amperelab.app/pt/">
+  <link rel="alternate" hreflang="en" href="https://amperelab.app/">
+  <link rel="alternate" hreflang="es" href="https://amperelab.app/es/">
+  <link rel="alternate" hreflang="de" href="https://amperelab.app/de/">
+  <link rel="alternate" hreflang="fr" href="https://amperelab.app/fr/">
+  <link rel="alternate" hreflang="it" href="https://amperelab.app/it/">
+  <link rel="alternate" hreflang="pt" href="https://amperelab.app/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://amperelab.app/">
+  
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d100e" media="(prefers-color-scheme: dark)">
+  
+  <link rel="icon" type="image/png" href="../assets/img/icon.png">
+  <link rel="apple-touch-icon" href="../assets/img/icon.png">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AmpereLab">
+  <meta property="og:title" content="AmpereLab · Meça a potência real de carga">
+  <meta property="og:description" content="Meça os watts reais de carga, teste cabos e compare seus carregadores.">
+  <meta property="og:image" content="../assets/img/feature-graphic.png">
+  
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="./" class="brand" aria-label="Início do AmpereLab">
+        <img src="../assets/img/icon.png" alt="Logotipo do AmpereLab" class="brand-icon">
+        <span>AmpereLab</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#features">Recursos</a>
+        <a href="#benchmark">Comparações</a>
+        <a href="#states">Estados</a>
+        <a href="#testers">Beta Testers</a>
+        <a href="#releases">Novidades</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" aria-label="Idioma">
+          <a href="../" lang="en">EN</a>
+          <a href="../es/" lang="es">ES</a>
+          <a href="../de/" lang="de">DE</a>
+          <a href="../fr/" lang="fr">FR</a>
+          <a href="../it/" lang="it">IT</a>
+          <a href="./" class="active" lang="pt">PT</a>
+        </div>
+
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Alternar tema">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <a href="#testers" class="btn btn-primary btn-sm">Testar Beta</a>
+
+        <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-menu" data-mobile-menu aria-label="Navegação móvel">
+      <a href="#features">Recursos</a>
+      <a href="#benchmark">Comparações</a>
+      <a href="#states">Estados</a>
+      <a href="#testers">Beta Testers</a>
+      <a href="#releases">Novidades</a>
+      <a href="#faq">FAQ</a>
+      <a href="#testers" class="btn btn-primary">Testar Beta</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Introdução">
+      <div class="wrap">
+        <div class="hero-pill">
+          <span class="badge">
+            <span class="badge-dot"></span>
+            Android 8.0+ · Sem Root · Zero permissões de Internet
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          Meça os watts reais de carga.<br>
+          <span class="highlight">Compare todos os seus carregadores.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          O Android diz «Carregando» assim que um cabo é plugado, mesmo se a bateria estiver caindo. O AmpereLab mede a potência líquida real que entra na célula e avalia seus carregadores com testes objetivos.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#testers" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.222 2.222 0 0 1-.61-.884V2.7c0-.332.22-.646.61-.886zm11.24 11.24l2.127-2.128-11.7-6.755 9.573 8.883zm0 1.892l-9.573 8.883 11.7-6.755-2.127-2.128zm1.056-1.056l3.398-1.962a1.054 1.054 0 0 0 0-1.826L15.905 13.89z"/>
+            </svg>
+            Entrar na Beta (Google Play)
+          </a>
+
+          <button class="btn btn-secondary" type="button" data-open-video data-video-src="../assets/video/demo-720p.mp4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Ver demo (26s)
+          </button>
+        </div>
+
+        <div class="hero-showcase">
+          <div class="mockup-grid">
+            <div class="phone-mockup mockup-left">
+              <img src="../assets/img/en/2.png" alt="Gráfico de telemetria em tempo real" width="240" height="480">
+            </div>
+            <div class="phone-mockup mockup-main">
+              <video class="mockup-video" autoplay loop muted playsinline poster="../assets/video/poster.jpg">
+                <source src="../assets/video/demo.webm" type="video/webm">
+                <source src="../assets/video/demo.mp4" type="video/mp4">
+                <img src="../assets/img/en/1.png" alt="Medidor radial em tempo real" width="290" height="580">
+              </video>
+            </div>
+            <div class="phone-mockup mockup-right">
+              <img src="../assets/img/en/4.png" alt="Ranking de carregadores" width="240" height="480">
+            </div>
+          </div>
+        </div>
+
+        <div class="features-strip">
+          <div class="strip-item">
+            <svg class="strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <div class="strip-text">
+              <h4>Potência líquida com sinal</h4>
+              <p>Watts reais (+ ou -) entrando na célula da bateria.</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <svg class="strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <div class="strip-text">
+              <h4>Tela desligada</h4>
+              <p>Mede a noite toda com segurança via serviço em primeiro plano.</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <svg class="strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div class="strip-text">
+              <h4>Exclusão de pausas</h4>
+              <p>Carga adaptativa e limite de 80% nunca distorcem suas médias.</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <svg class="strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <div class="strip-text">
+              <h4>100% Privado</h4>
+              <p>Sem anúncios, sem rastreadores e sem permissão de Internet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid -->
+    <section id="features" class="section section-alt" aria-label="Recursos">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-tag">Engenharia de Precisão</div>
+          <h2 class="section-title">Feito para entender como seu telefone carrega</h2>
+          <p class="section-desc">Chega de dúvidas se aquele cabo genérico está limitando seu carregador rápido. Obtenha diagnósticos objetivos em segundos.</p>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-card col-8">
+            <div class="card-content">
+              <h3>Telemetria em tempo real & medidor radial</h3>
+              <p>Veja os watts oscilarem conforme o aparelho negocia protocolos USB-PD. Registra voltagem (V), corrente (A), temperatura (°C) e energia acumulada em watts-hora (Wh) com a regra do trapézio.</p>
+            </div>
+            <div class="card-media">
+              <img src="../assets/img/en/2.png" alt="Telemetria em tempo real" loading="lazy">
+            </div>
+          </div>
+
+          <div class="bento-card col-4" id="benchmark">
+            <div class="card-content">
+              <h3>Ranking objetivo</h3>
+              <p>Compare cada carregador pelo ritmo real: <strong>minutos necessários para subir 10% de bateria</strong> e média ponderada.</p>
+            </div>
+            <div class="card-media">
+              <img src="../assets/img/en/4.png" alt="Ranking de carregadores" loading="lazy">
+            </div>
+          </div>
+
+          <div class="bento-card col-4">
+            <div class="card-content">
+              <h3>Testes noturnos seguros</h3>
+              <p>Dê um nome ao carregador, inicie o teste e bloqueie a tela. O serviço em primeiro plano grava tudo sem esquentar o display.</p>
+            </div>
+            <div class="card-media">
+              <img src="../assets/img/en/3.png" alt="Início do teste" loading="lazy">
+            </div>
+          </div>
+
+          <div class="bento-card col-8">
+            <div class="card-content">
+              <h3>Widget, botão rápido e exportação CSV</h3>
+              <p>Acompanhe a potência direto pelo widget Material You ou painel de configurações rápidas. Exporte todo o histórico para CSV com um toque.</p>
+            </div>
+            <div class="card-media">
+              <img src="../assets/img/en/5.png" alt="Histórico e CSV" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estados de carga -->
+    <section id="states" class="section" aria-label="Estados de carga">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-tag">Mais Inteligente que o Android</div>
+          <h2 class="section-title">Por que outros apps mostram dados enganosos</h2>
+          <p class="section-desc">O sistema operacional avisa «Carregando» sempre que detecta 5 volts, mesmo com a bateria caindo. O AmpereLab identifica quatro estados físicos reais:</p>
+        </div>
+
+        <div class="states-table-wrap">
+          <table class="states-table">
+            <thead>
+              <tr>
+                <th>Estado</th>
+                <th>Limiar</th>
+                <th>O que realmente significa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="state-pill state-charging">● Carregando</span></td>
+                <td><strong>&gt; 0,5 W</strong> entrando na bateria</td>
+                <td>A energia flui ativamente para a célula. O medidor radial mostra o fluxo em tempo real.</td>
+              </tr>
+              <tr>
+                <td><span class="state-pill state-paused">● Carga em pausa</span></td>
+                <td>Plugado, <strong>~0 W</strong> líquidos</td>
+                <td>Carga adaptativa noturna, proteção térmica ou limite de 80% ativo. <em>Separado da média para não arruinar seus testes.</em></td>
+              </tr>
+              <tr>
+                <td><span class="state-pill state-losing">● Perdendo carga</span></td>
+                <td>Watts negativos plugado</td>
+                <td>O aparelho consome mais energia do que o carregador consegue fornecer (comum com GPS automotivo ou cabos ruins).</td>
+              </tr>
+              <tr>
+                <td><span class="state-pill state-full">● Bateria cheia</span></td>
+                <td>100% atingido</td>
+                <td>Modo de manutenção. A bateria está totalmente carregada.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTERS SECTION -->
+    <section id="testers" class="section section-alt" aria-label="Programa de Beta Testers">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-tag">Acesso Antecipado</div>
+          <h2 class="section-title">👉 Como você pode dar uma força em 30 segundos (2 passos)</h2>
+          <p class="section-desc">O AmpereLab está em fase de testes fechados no Google Play. Siga estes dois passos rápidos para baixar a versão beta:</p>
+        </div>
+
+        <div class="testers-card">
+          <div class="privacy-banner">
+            <span class="icon">🔒</span>
+            <p><strong>Nota importante de privacidade:</strong> O Grupo do Google está configurado em modo protegido: ninguém pode ver os membros do grupo nem seu e-mail, nem enviar spam. Serve apenas como chave automática para que o Google Play permita baixar a versão beta.</p>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card">
+              <div>
+                <div class="step-header">
+                  <span class="step-num">1</span>
+                  <h3>Entrar no grupo de acesso</h3>
+                </div>
+                <p>Abra o link e clique no botão <strong>«Participar do grupo»</strong> no topo (leva só 1 clique).</p>
+              </div>
+              <div class="step-actions">
+                <a href="https://groups.google.com/g/ampere-lab-testers" class="btn btn-secondary" target="_blank" rel="noopener">
+                  👉 Entrar no Grupo do Google
+                </a>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div>
+                <div class="step-header">
+                  <span class="step-num">2</span>
+                  <h3>Baixar pelo Google Play</h3>
+                </div>
+                <p>Assim que entrar no grupo, o Google Play liberará o download automaticamente para sua conta.</p>
+              </div>
+              <div class="step-actions">
+                <a href="https://play.google.com/store/apps/details?id=io.github.manuel2f.amperelab" class="btn btn-primary" target="_blank" rel="noopener">
+                  📱 Link direto no Google Play
+                </a>
+                <a href="https://play.google.com/apps/testing/io.github.manuel2f.amperelab" class="btn btn-secondary btn-sm" target="_blank" rel="noopener" style="text-align:center;">
+                  🌐 Ativação Web (se pedir aceite antes)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELEASES -->
+    <section id="releases" class="section" aria-label="Novidades das versões">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-tag">Histórico de Atualizações</div>
+          <h2 class="section-title">Novidades das versões</h2>
+          <p class="section-desc">Melhorias contínuas introduzidas a cada atualização do AmpereLab.</p>
+        </div>
+
+        <div class="releases-list">
+          <div class="release-card">
+            <div class="release-header">
+              <div class="release-title">
+                <span>Versão 0.6.1</span>
+                <span class="badge"><span class="badge-dot"></span> Mais recente</span>
+              </div>
+              <span class="release-date">Outubro de 2026</span>
+            </div>
+            <ul>
+              <li>O app agora avisa quando há uma nova versão no Google Play e oferece instalá-la após o download em segundo plano.</li>
+              <li>Novos idiomas suportados: alemão, francês, italiano e português do Brasil.</li>
+            </ul>
+          </div>
+
+          <div class="release-card">
+            <div class="release-header">
+              <div class="release-title">Versão 0.6.0</div>
+              <span class="release-date">Outubro de 2026</span>
+            </div>
+            <ul>
+              <li>Capacidade nominal da bateria ajustável manualmente quando o modelo não estiver no catálogo oficial.</li>
+              <li>Diagnóstico de sensores: leituras brutas e calibração de polaridade para copiar ou compartilhar.</li>
+              <li>Detecção de unidades mais confiável em aparelhos que não sejam Pixel.</li>
+              <li>Consumo de CPU em espera otimizado durante sessões longas.</li>
+            </ul>
+          </div>
+
+          <div class="release-card">
+            <div class="release-header">
+              <div class="release-title">Versão 0.5.0</div>
+              <span class="release-date">Outubro de 2026</span>
+            </div>
+            <ul>
+              <li>Nova tela de configurações com seleção de tema e limiares personalizáveis.</li>
+              <li>Visualizador de novidades integrado diretamente no app.</li>
+              <li>Backup e restauração local completa sem depender de nuvem.</li>
+            </ul>
+          </div>
+
+          <div class="release-card">
+            <div class="release-header">
+              <div class="release-title">Versão 0.4.0</div>
+              <span class="release-date">Outubro de 2026</span>
+            </div>
+            <ul>
+              <li>Edição de sessões, nomes de carregadores e identificação personalizada de cabos.</li>
+              <li>Filtros avançados por data e tipo de carregador no histórico.</li>
+              <li>Botão de desfazer ao apagar medições acidentalmente.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section-alt" aria-label="FAQ">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-tag">Dúvidas?</div>
+          <h2 class="section-title">Perguntas Frequentes</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>O AmpereLab precisa de root ou comandos ADB?</summary>
+            <div class="faq-answer">
+              Não. O AmpereLab lê as métricas direto do subsistema BatteryManager padrão do Android e sensores do dispositivo sem precisar de root ou PC.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>O aplicativo gasta bateria durante as medições?</summary>
+            <div class="faq-answer">
+              O consumo é mínimo. Com a tela ligada, o medidor gráfico renderiza a 60 fps suaves. Com a tela apagada, o serviço em primeiro plano lê periodicamente com impacto desprezível na CPU.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Por que os watts oscilam durante o carregamento?</summary>
+            <div class="faq-answer">
+              Os celulares modernos ajustam a potência dinamicamente de acordo com curvas de temperatura e tensão (USB-PD PPS). Um smartphone que recebe 30W descarregado reduz gradualmente para 15W ou 8W conforme enche ou esquenta.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Meus dados estão seguros e protegidos?</summary>
+            <div class="faq-answer">
+              Sim, 100%. O app não solicita nem mesmo a permissão <code>INTERNET</code> no Android. Sem anúncios, sem rastreadores e sem servidores na nuvem.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="download" class="section" aria-label="Download">
+      <div class="wrap">
+        <div class="cta-box">
+          <h2>Pronto para testar seus carregadores?</h2>
+          <p>Participe do beta fechado do AmpereLab hoje mesmo e descubra quais carregadores e cabos realmente entregam potência máxima.</p>
+          <div class="hero-ctas" style="margin-bottom:0;">
+            <a href="#testers" class="btn btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3.609 1.814L13.793 12 3.61 22.186a2.222 2.222 0 0 1-.61-.884V2.7c0-.332.22-.646.61-.886zm11.24 11.24l2.127-2.128-11.7-6.755 9.573 8.883zm0 1.892l-9.573 8.883 11.7-6.755-2.127-2.128zm1.056-1.056l3.398-1.962a1.054 1.054 0 0 0 0-1.826L15.905 13.89z"/>
+              </svg>
+              Entrar no Beta no Google Play
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="brand">
+          <img src="../assets/img/icon.png" alt="Logotipo do AmpereLab" class="brand-icon">
+          <span>AmpereLab</span>
+        </div>
+        <div class="footer-links">
+          <a href="../privacy/">Política de Privacidade</a>
+          <a href="https://github.com/manuel2f/PixelChargerMeter" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:contact@amperelab.app">Suporte e Contato</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AmpereLab. Todos os direitos reservados. Android e Google Play são marcas da Google LLC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" data-video-modal aria-hidden="true" role="dialog" aria-label="Reprodutor de vídeo">
+    <div class="modal-content">
+      <button class="modal-close" data-close-video aria-label="Fechar vídeo">&times;</button>
+      <div data-video-frame style="width:100%;height:100%;"></div>
+    </div>
+  </div>
+</body>
+</html>

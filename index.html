@@ -9,6 +9,10 @@
   <link rel="canonical" href="https://amperelab.app/">
   <link rel="alternate" hreflang="en" href="https://amperelab.app/">
   <link rel="alternate" hreflang="es" href="https://amperelab.app/es/">
+  <link rel="alternate" hreflang="de" href="https://amperelab.app/de/">
+  <link rel="alternate" hreflang="fr" href="https://amperelab.app/fr/">
+  <link rel="alternate" hreflang="it" href="https://amperelab.app/it/">
+  <link rel="alternate" hreflang="pt" href="https://amperelab.app/pt/">
   <link rel="alternate" hreflang="x-default" href="https://amperelab.app/">
   
   <meta name="color-scheme" content="light dark">
@@ -18,12 +22,11 @@
   <link rel="icon" type="image/png" href="./assets/img/icon.png">
   <link rel="apple-touch-icon" href="./assets/img/icon.png">
   
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AmpereLab">
   <meta property="og:title" content="AmpereLab · Measure Real Charging Watts & Benchmark Chargers">
   <meta property="og:description" content="Measure true charging watts and find out which charger actually charges faster without root or ADB.">
-  <meta property="og:image" content="/assets/img/feature-graphic.png">
+  <meta property="og:image" content="./assets/img/feature-graphic.png">
   
   <link rel="stylesheet" href="./assets/css/style.css">
   <script src="./assets/js/main.js" defer></script>
@@ -42,16 +45,21 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#features">Features</a>
         <a href="#benchmark">Benchmarks</a>
-        <a href="#states">Charging States</a>
+        <a href="#states">States</a>
+        <a href="#testers">Beta Testers</a>
+        <a href="#releases">What's New</a>
         <a href="#faq">FAQ</a>
       </nav>
 
       <div class="header-actions">
-        <!-- Language Switcher -->
+        <!-- Multi-language selector -->
         <div class="lang-switch" aria-label="Language">
           <a href="./" class="active" lang="en">EN</a>
-          <span class="sep">/</span>
           <a href="./es/" lang="es">ES</a>
+          <a href="./de/" lang="de">DE</a>
+          <a href="./fr/" lang="fr">FR</a>
+          <a href="./it/" lang="it">IT</a>
+          <a href="./pt/" lang="pt">PT</a>
         </div>
 
         <!-- Dark/Light Theme Button -->
@@ -72,7 +80,7 @@
           </svg>
         </button>
 
-        <a href="#download" class="btn btn-primary btn-sm">Get the App</a>
+        <a href="#testers" class="btn btn-primary btn-sm">Try Beta</a>
 
         <!-- Mobile Menu Toggle -->
         <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Toggle menu">
@@ -85,13 +93,15 @@
       </div>
     </div>
 
-    <!-- Mobile dropdown menu -->
+    <!-- Mobile Menu -->
     <nav class="mobile-menu" data-mobile-menu aria-label="Mobile Navigation">
       <a href="#features">Features</a>
       <a href="#benchmark">Benchmarks</a>
-      <a href="#states">Charging States</a>
+      <a href="#states">States</a>
+      <a href="#testers">Beta Testers</a>
+      <a href="#releases">What's New</a>
       <a href="#faq">FAQ</a>
-      <a href="#download" class="btn btn-primary">Get the App</a>
+      <a href="#testers" class="btn btn-primary">Try Beta</a>
     </nav>
   </header>
 
@@ -116,11 +126,11 @@
         </p>
 
         <div class="hero-ctas">
-          <a href="#download" class="btn btn-primary">
+          <a href="#testers" class="btn btn-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M3.609 1.814L13.793 12 3.61 22.186a2.222 2.222 0 0 1-.61-.884V2.7c0-.332.22-.646.61-.886zm11.24 11.24l2.127-2.128-11.7-6.755 9.573 8.883zm0 1.892l-9.573 8.883 11.7-6.755-2.127-2.128zm1.056-1.056l3.398-1.962a1.054 1.054 0 0 0 0-1.826L15.905 13.89z"/>
             </svg>
-            Available on Google Play
+            Join Google Play Closed Beta
           </a>
 
           <!-- Video button (trigger modal) -->
@@ -139,7 +149,7 @@
               <img src="./assets/img/en/2.png" alt="Live wattage telemetry graph" width="240" height="480">
             </div>
             <div class="phone-mockup mockup-main">
-              <video class="mockup-video" autoplay loop muted playsinline poster="/assets/video/poster.jpg">
+              <video class="mockup-video" autoplay loop muted playsinline poster="./assets/video/poster.jpg">
                 <source src="./assets/video/demo.webm" type="video/webm">
                 <source src="./assets/video/demo.mp4" type="video/mp4">
                 <img src="./assets/img/en/1.png" alt="AmpereLab radial real-time power meter" width="290" height="580">
@@ -207,7 +217,6 @@
         </div>
 
         <div class="bento-grid">
-          <!-- Live Telemetry Card -->
           <div class="bento-card col-8">
             <div class="card-content">
               <h3>Live Telemetry & Radial Power Meter</h3>
@@ -218,7 +227,6 @@
             </div>
           </div>
 
-          <!-- Benchmark Ranking Card -->
           <div class="bento-card col-4" id="benchmark">
             <div class="card-content">
               <h3>Objective Charger Leaderboard</h3>
@@ -229,7 +237,6 @@
             </div>
           </div>
 
-          <!-- Screen-off Card -->
           <div class="bento-card col-4">
             <div class="card-content">
               <h3>Overnight Benchmarking</h3>
@@ -240,7 +247,6 @@
             </div>
           </div>
 
-          <!-- Widgets & History Card -->
           <div class="bento-card col-8">
             <div class="card-content">
               <h3>Home Screen Widget, Tile & CSV Export</h3>
@@ -254,7 +260,7 @@
       </div>
     </section>
 
-    <!-- States Explanation (RawPace style deep dive) -->
+    <!-- States Explanation -->
     <section id="states" class="section" aria-label="Charging States">
       <div class="wrap">
         <div class="section-head">
@@ -295,6 +301,129 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTERS / BETA SECTION (New) -->
+    <section id="testers" class="section section-alt" aria-label="Beta Testers Program">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-tag">Early Access</div>
+          <h2 class="section-title">👉 How you can help out in 30 seconds (2 steps)</h2>
+          <p class="section-desc">AmpereLab is currently in closed testing on Google Play. Follow these two quick steps to download the beta build:</p>
+        </div>
+
+        <div class="testers-card">
+          <!-- Privacy notice -->
+          <div class="privacy-banner">
+            <span class="icon">🔒</span>
+            <p><strong>Important privacy note:</strong> The Google Group is set to strict privacy mode: nobody can see member identities or email addresses, and nobody can send spam. It only acts as an automated access key so Google Play allows you to download the beta.</p>
+          </div>
+
+          <!-- Steps -->
+          <div class="steps-grid">
+            <div class="step-card">
+              <div>
+                <div class="step-header">
+                  <span class="step-num">1</span>
+                  <h3>Join the access group</h3>
+                </div>
+                <p>Click the link and tap the <strong>"Join group"</strong> button at the top (takes just 1 click).</p>
+              </div>
+              <div class="step-actions">
+                <a href="https://groups.google.com/g/ampere-lab-testers" class="btn btn-secondary" target="_blank" rel="noopener">
+                  👉 Join Google Group
+                </a>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div>
+                <div class="step-header">
+                  <span class="step-num">2</span>
+                  <h3>Download on Google Play</h3>
+                </div>
+                <p>Once you are in the group, Google Play automatically grants your account access to install the app.</p>
+              </div>
+              <div class="step-actions">
+                <a href="https://play.google.com/store/apps/details?id=io.github.manuel2f.amperelab" class="btn btn-primary" target="_blank" rel="noopener">
+                  📱 Direct Google Play link
+                </a>
+                <a href="https://play.google.com/apps/testing/io.github.manuel2f.amperelab" class="btn btn-secondary btn-sm" target="_blank" rel="noopener" style="text-align:center;">
+                  🌐 Web opt-in (if acceptance required)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELEASES & CHANGELOG SECTION (New) -->
+    <section id="releases" class="section" aria-label="Version Changelog">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-tag">Changelog</div>
+          <h2 class="section-title">What's New in Every Release</h2>
+          <p class="section-desc">Continuous enhancements and features added across each AmpereLab version.</p>
+        </div>
+
+        <div class="releases-list">
+          <!-- v0.6.1 -->
+          <div class="release-card">
+            <div class="release-header">
+              <div class="release-title">
+                <span>Version 0.6.1</span>
+                <span class="badge"><span class="badge-dot"></span> Latest</span>
+              </div>
+              <span class="release-date">October 2026</span>
+            </div>
+            <ul>
+              <li>The app now tells you when a new version is available on Google Play and offers to install it after a background download.</li>
+              <li>Added full multi-language support: German, French, Italian, and Brazilian Portuguese.</li>
+            </ul>
+          </div>
+
+          <!-- v0.6.0 -->
+          <div class="release-card">
+            <div class="release-header">
+              <div class="release-title">Version 0.6.0</div>
+              <span class="release-date">October 2026</span>
+            </div>
+            <ul>
+              <li>Set factory battery capacity manually when your specific phone model is not in the automatic catalog.</li>
+              <li>Full sensor diagnostics: inspect raw readings and polarity calibration to copy or share.</li>
+              <li>More reliable current unit scaling across non-Pixel device manufacturers.</li>
+              <li>Optimized idle CPU consumption during extended overnight measurement runs.</li>
+            </ul>
+          </div>
+
+          <!-- v0.5.0 -->
+          <div class="release-card">
+            <div class="release-header">
+              <div class="release-title">Version 0.5.0</div>
+              <span class="release-date">October 2026</span>
+            </div>
+            <ul>
+              <li>New dedicated settings screen with theme selector and threshold configurations.</li>
+              <li>In-app changelog viewer to track historical updates directly.</li>
+              <li>Full offline backup and restore of benchmark sessions and custom calibration.</li>
+            </ul>
+          </div>
+
+          <!-- v0.4.0 -->
+          <div class="release-card">
+            <div class="release-header">
+              <div class="release-title">Version 0.4.0</div>
+              <span class="release-date">October 2026</span>
+            </div>
+            <ul>
+              <li>Edit past sessions, rename chargers, and tag custom cables.</li>
+              <li>Advanced history filters by date range and charger classification.</li>
+              <li>Quick undo banner for accidentally deleted test records.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -344,13 +473,13 @@
       <div class="wrap">
         <div class="cta-box">
           <h2>Ready to test your chargers?</h2>
-          <p>Get AmpereLab today on Google Play and find out which cables and bricks are truly delivering high-speed power.</p>
+          <p>Join the AmpereLab closed beta today and discover which chargers and cables are truly delivering high-speed power.</p>
           <div class="hero-ctas" style="margin-bottom:0;">
-            <a href="https://play.google.com/store/apps/details?id=com.manu.pixelchargermeter" class="btn btn-primary" target="_blank" rel="noopener">
+            <a href="#testers" class="btn btn-primary">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3.609 1.814L13.793 12 3.61 22.186a2.222 2.222 0 0 1-.61-.884V2.7c0-.332.22-.646.61-.886zm11.24 11.24l2.127-2.128-11.7-6.755 9.573 8.883zm0 1.892l-9.573 8.883 11.7-6.755-2.127-2.128zm1.056-1.056l3.398-1.962a1.054 1.054 0 0 0 0-1.826L15.905 13.89z"/>
               </svg>
-              Download on Google Play
+              Join the Beta on Google Play
             </a>
           </div>
         </div>
@@ -378,7 +507,7 @@
     </div>
   </footer>
 
-  <!-- Video Modal (Deferred YouTube load) -->
+  <!-- Video Modal -->
   <div class="modal-backdrop" data-video-modal aria-hidden="true" role="dialog" aria-label="Demo Video Player">
     <div class="modal-content">
       <button class="modal-close" data-close-video aria-label="Close video">&times;</button>
