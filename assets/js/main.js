@@ -61,6 +61,15 @@
   const openVideoBtns = document.querySelectorAll('[data-open-video]');
   const closeVideoBtn = document.querySelector('[data-close-video]');
   const videoFrameContainer = document.querySelector('[data-video-frame]');
+  let lastFocused = null;
+
+  // --- REDUCED MOTION: stop the looping hero video ---
+  const heroVideo = document.querySelector('.mockup-video');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (heroVideo && reducedMotion.matches) {
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.pause();
+  }
 
   function openVideo(videoSrc, isYoutube = false) {
     if (!modalBackdrop || !videoFrameContainer) return;
@@ -76,19 +85,38 @@
       videoFrameContainer.innerHTML = `
         <video controls autoplay playsinline style="width:100%;height:100%;object-fit:contain;background:#000;">
           <source src="${videoSrc}" type="video/mp4">
-          Tu navegador no soporta el formato de vídeo.
         </video>`;
     }
+    lastFocused = document.activeElement;
     modalBackdrop.classList.add('is-open');
+    modalBackdrop.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    closeVideoBtn?.focus();
   }
 
   function closeVideo() {
     if (!modalBackdrop || !videoFrameContainer) return;
     modalBackdrop.classList.remove('is-open');
+    modalBackdrop.setAttribute('aria-hidden', 'true');
     videoFrameContainer.innerHTML = '';
     document.body.style.overflow = '';
+    lastFocused?.focus();
   }
+
+  // Keep keyboard focus inside the open modal
+  modalBackdrop?.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    const focusable = modalBackdrop.querySelectorAll('button, video[controls], iframe');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
 
   openVideoBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {

@@ -6,14 +6,14 @@
   <title>AmpereLab · Misura i watt reali di ricarica & confronta i caricabatterie</title>
   <meta name="description" content="App Android per misurare la potenza netta reale e confrontare caricabatterie e cavi USB-C con test oggettivi. Senza root, senza ADB, 100% privata.">
   
-  <link rel="canonical" href="https://amperelab.app/it/">
-  <link rel="alternate" hreflang="en" href="https://amperelab.app/">
-  <link rel="alternate" hreflang="es" href="https://amperelab.app/es/">
-  <link rel="alternate" hreflang="de" href="https://amperelab.app/de/">
-  <link rel="alternate" hreflang="fr" href="https://amperelab.app/fr/">
-  <link rel="alternate" hreflang="it" href="https://amperelab.app/it/">
-  <link rel="alternate" hreflang="pt" href="https://amperelab.app/pt/">
-  <link rel="alternate" hreflang="x-default" href="https://amperelab.app/">
+  <link rel="canonical" href="https://manuel2f.github.io/amperelab-web/it/">
+  <link rel="alternate" hreflang="en" href="https://manuel2f.github.io/amperelab-web/">
+  <link rel="alternate" hreflang="es" href="https://manuel2f.github.io/amperelab-web/es/">
+  <link rel="alternate" hreflang="de" href="https://manuel2f.github.io/amperelab-web/de/">
+  <link rel="alternate" hreflang="fr" href="https://manuel2f.github.io/amperelab-web/fr/">
+  <link rel="alternate" hreflang="it" href="https://manuel2f.github.io/amperelab-web/it/">
+  <link rel="alternate" hreflang="pt" href="https://manuel2f.github.io/amperelab-web/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://manuel2f.github.io/amperelab-web/">
   
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
@@ -26,7 +26,7 @@
   <meta property="og:site_name" content="AmpereLab">
   <meta property="og:title" content="AmpereLab · Misura la potenza reale di ricarica">
   <meta property="og:description" content="Misura i watt reali di ricarica, testa i cavi e confronta i caricabatterie.">
-  <meta property="og:image" content="../assets/img/feature-graphic.png">
+  <meta property="og:image" content="https://manuel2f.github.io/amperelab-web/assets/img/feature-graphic.png">
   
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/main.js" defer></script>
@@ -97,6 +97,14 @@
       <a href="#releases">Novità</a>
       <a href="#faq">FAQ</a>
       <a href="#testers" class="btn btn-primary">Prova la Beta</a>
+      <div class="lang-switch lang-switch-mobile" aria-label="Lingua">
+        <a href="../" lang="en">EN</a>
+        <a href="../es/" lang="es">ES</a>
+        <a href="../de/" lang="de">DE</a>
+        <a href="../fr/" lang="fr">FR</a>
+        <a href="./" class="active" lang="it">IT</a>
+        <a href="../pt/" lang="pt">PT</a>
+      </div>
     </nav>
   </header>
 
@@ -491,7 +499,7 @@
     </div>
   </footer>
 
-  <div class="modal-backdrop" data-video-modal aria-hidden="true" role="dialog" aria-label="Riproduttore video">
+  <div class="modal-backdrop" data-video-modal aria-hidden="true" role="dialog" aria-modal="true" aria-label="Riproduttore video">
     <div class="modal-content">
       <button class="modal-close" data-close-video aria-label="Chiudi video">&times;</button>
       <div data-video-frame style="width:100%;height:100%;"></div>

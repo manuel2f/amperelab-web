@@ -74,6 +74,11 @@ html {
   line-height: 1.5;
 }
 
+/* Keep anchor targets clear of the sticky header */
+[id] {
+  scroll-margin-top: 84px;
+}
+
 body {
   overflow-x: hidden;
   transition: background-color 0.25s ease, color 0.25s ease;
@@ -292,6 +297,11 @@ a {
   display: none;
 }
 
+.mobile-menu,
+.lang-switch-mobile {
+  display: none;
+}
+
 /* =========================================
    HERO SECTION
 ========================================= */
@@ -313,8 +323,11 @@ a {
   max-width: 900px;
   margin: 0 auto 20px auto;
   letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 .hero-title .highlight {
+  display: block;
+  text-wrap: balance;
   color: var(--primary);
   background: linear-gradient(135deg, var(--primary) 0%, #1e88e5 100%);
   -webkit-background-clip: text;
@@ -528,8 +541,10 @@ a {
   justify-content: center;
 }
 .card-media img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  max-height: 480px;
   display: block;
 }
 
@@ -729,14 +744,21 @@ a {
 }
 .modal-close {
   position: absolute;
-  top: -46px;
-  right: 0;
-  background: none;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
   border: none;
+  border-radius: 50%;
   color: white;
-  font-size: 2rem;
+  font-size: 1.75rem;
+  line-height: 1;
   cursor: pointer;
-  padding: 4px;
 }
 .modal-content iframe,
 .modal-content video {
@@ -922,7 +944,57 @@ a {
   .mobile-menu.is-open {
     display: flex;
   }
+  .mobile-menu > a:not(.btn) {
+    padding: 10px 0;
+  }
+  /* Header is too narrow for six languages + CTA: move them into the menu */
+  .header-actions > .lang-switch,
+  .header-actions > .btn {
+    display: none;
+  }
+  .lang-switch-mobile {
+    display: inline-flex;
+    align-self: flex-start;
+  }
+  .lang-switch-mobile a {
+    padding: 8px 10px;
+  }
+  .badge {
+    text-align: center;
+  }
+  /* Stack the states table into one card per row */
+  .states-table thead {
+    display: none;
+  }
+  .states-table tr {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .states-table tr:last-child {
+    border-bottom: none;
+  }
+  .states-table td {
+    display: block;
+    padding: 4px 18px;
+    border-bottom: none;
+  }
+  .footer-links a {
+    display: inline-block;
+    padding: 10px 0;
+  }
   .features-strip {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
