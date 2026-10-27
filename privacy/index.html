@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AmpereLab · Política de privacidad / Privacy policy</title>
+<link rel="icon" type="image/png" href="/assets/img/icon.png">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .legal-container {
+    max-width: 760px;
+    margin: 40px auto 80px auto;
+    padding: 0 24px;
+    line-height: 1.7;
+  }
+  .legal-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .legal-nav a {
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .legal-container h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  .legal-container h2 {
+    font-size: 1.35rem;
+    margin-top: 36px;
+    margin-bottom: 12px;
+  }
+  .legal-container h3 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 6px;
+  }
+  .legal-container p {
+    margin-bottom: 16px;
+  }
+  .legal-container ul {
+    padding-left: 24px;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+  }
+  .legal-container li {
+    margin-bottom: 8px;
+  }
+  .legal-divider {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 48px 0;
+  }
+</style>
+<script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <div class="legal-container">
+    <div class="legal-nav">
+      <a href="/">&larr; Volver / Back to AmpereLab</a>
+      <div>
+        <a href="#es">Español</a> &middot; <a href="#en">English</a>
+      </div>
+    </div>
+
+    <section id="es" lang="es">
+      <h1>Política de privacidad de AmpereLab</h1>
+      <p style="color:var(--text-subtle); font-size:0.9rem;">Última actualización: 25 de octubre de 2026 · Aplicación: AmpereLab (com.manu.pixelchargermeter)</p>
+
+      <p>AmpereLab es una aplicación para medir la potencia real de carga de la batería y comparar distintos cargadores y cables. Está diseñada para que tus datos se queden en tu móvil: no solicita permiso de acceso a internet, no tiene cuentas de usuario, ni servidores propios, ni analítica o publicidad.</p>
+
+      <h2>Datos que usa la app y para qué</h2>
+      <h3>Sensores de batería del dispositivo</h3>
+      <p>La app lee localmente el estado de carga que expone Android (<code>BatteryManager</code> y el broadcast del sistema <code>ACTION_BATTERY_CHANGED</code>): corriente instantánea, voltaje, porcentaje de batería, temperatura y contador de carga, únicamente para mostrarlos en pantalla y calcular la potencia y energía de tus pruebas.</p>
+      
+      <h3>Historial de pruebas de carga</h3>
+      <p>Cuando inicias y guardas una prueba, el nombre que le das al cargador y las métricas de esa sesión se almacenan exclusivamente en la base de datos local de tu teléfono. Si eliges «Exportar CSV», la app genera un archivo temporal en tu teléfono y abre el menú de compartir del sistema para que tú decidas dónde guardarlo o enviarlo.</p>
+      
+      <h3>Servicio en primer plano y notificaciones</h3>
+      <p>Cuando pulsas «Iniciar prueba», la aplicación utiliza un servicio en primer plano con una notificación visible para poder seguir leyendo el sensor de batería mientras la pantalla está apagada hasta que detengas la prueba o desconectes el cargador.</p>
+
+      <h2>Qué no hacemos</h2>
+      <ul>
+        <li>No recopilamos, transmitimos ni compartimos ningún dato personal o técnico fuera de tu teléfono (la app no tiene permiso de internet).</li>
+        <li>No vendemos ni cedemos datos a terceros.</li>
+        <li>No hay cuentas, analítica, publicidad ni rastreadores.</li>
+      </ul>
+
+      <h2>Tus controles</h2>
+      <ul>
+        <li>Puedes eliminar cualquier prueba individual o usar «Borrar todo» desde la pestaña «Historial» en cualquier momento.</li>
+        <li>Puedes detener una prueba en curso en cualquier momento desde la propia notificación o desde la app.</li>
+        <li>Al desinstalar la app se elimina todo lo que guarda en el dispositivo.</li>
+      </ul>
+
+      <h2>Menores</h2>
+      <p>AmpereLab es una herramienta técnica de utilidad general y no recopila datos de usuarios de ninguna edad.</p>
+
+      <h2>Cambios y contacto</h2>
+      <p>Si esta política cambia, se actualizará esta página con la nueva fecha. Para cualquier duda: <a href="mailto:contact@amperelab.app">contact@amperelab.app</a>.</p>
+    </section>
+
+    <hr class="legal-divider">
+
+    <section id="en" lang="en">
+      <h1>AmpereLab Privacy Policy</h1>
+      <p style="color:var(--text-subtle); font-size:0.9rem;">Last updated: October 25, 2026 · App: AmpereLab (com.manu.pixelchargermeter)</p>
+
+      <p>AmpereLab is a utility app that measures real battery charging power and lets you benchmark and compare chargers and cables. It is designed so your data stays on your phone: it does not request internet permission, and has no user accounts, no servers of our own, and no analytics or advertising.</p>
+
+      <h2>Data the app uses and why</h2>
+      <h3>Device battery sensors</h3>
+      <p>The app locally reads the charging telemetry exposed by Android (<code>BatteryManager</code> and the system <code>ACTION_BATTERY_CHANGED</code> broadcast): instantaneous current, voltage, battery level, temperature, and charge counter, solely to display them on screen and compute power and energy during your benchmark tests.</p>
+      
+      <h3>Charging test history</h3>
+      <p>When you start and save a benchmark session, the charger name you enter and the session metrics are stored exclusively in the local database on your device. If you tap "Export CSV", the app generates a temporary file on your phone and opens the Android system share sheet so you can choose where to save or send it.</p>
+      
+      <h3>Foreground service and notifications</h3>
+      <p>When you tap "Start test", the app runs a foreground service with an ongoing notification so it can continue sampling the battery sensor while the screen is off until you stop the test or unplug the charger.</p>
+
+      <h2>What we don't do</h2>
+      <ul>
+        <li>We do not collect, transmit, or share any personal or technical data outside your device (the app has no internet permission).</li>
+        <li>We don't sell or share data with third parties.</li>
+        <li>No accounts, analytics, advertising, or tracking SDKs.</li>
+      </ul>
+
+      <h2>Your controls</h2>
+      <ul>
+        <li>You can delete individual benchmark sessions or tap "Delete all" in the "History" tab at any time.</li>
+        <li>You can stop an active test at any time from the ongoing notification or inside the app.</li>
+        <li>Uninstalling the app removes everything it stores on your device.</li>
+      </ul>
+
+      <h2>Children</h2>
+      <p>AmpereLab is a general-purpose technical utility and does not collect data from users of any age.</p>
+
+      <h2>Changes and contact</h2>
+      <p>If this policy changes, this page will be updated with the new date. For any question: <a href="mailto:contact@amperelab.app">contact@amperelab.app</a>.</p>
+    </section>
+  </div>
+</body>
+</html>

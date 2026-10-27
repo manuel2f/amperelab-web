@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AmpereLab · Measure Real Charging Watts & Benchmark Chargers</title>
+  <meta name="description" content="Android app to measure real net charging power and benchmark chargers and USB-C cables with objective tests. No root, no ADB, 100% private.">
+  
+  <link rel="canonical" href="https://amperelab.app/">
+  <link rel="alternate" hreflang="en" href="https://amperelab.app/">
+  <link rel="alternate" hreflang="es" href="https://amperelab.app/es/">
+  <link rel="alternate" hreflang="x-default" href="https://amperelab.app/">
+  
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d100e" media="(prefers-color-scheme: dark)">
+  
+  <link rel="icon" type="image/png" href="/assets/img/icon.png">
+  <link rel="apple-touch-icon" href="/assets/img/icon.png">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AmpereLab">
+  <meta property="og:title" content="AmpereLab · Measure Real Charging Watts & Benchmark Chargers">
+  <meta property="og:description" content="Measure true charging watts and find out which charger actually charges faster without root or ADB.">
+  <meta property="og:image" content="/assets/img/feature-graphic.png">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="/" class="brand" aria-label="AmpereLab Home">
+        <img src="/assets/img/icon.png" alt="AmpereLab Logo" class="brand-icon">
+        <span>AmpereLab</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#benchmark">Benchmarks</a>
+        <a href="#states">Charging States</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switch" aria-label="Language">
+          <a href="/" class="active" lang="en">EN</a>
+          <span class="sep">/</span>
+          <a href="/es/" lang="es">ES</a>
+        </div>
+
+        <!-- Dark/Light Theme Button -->
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <a href="#download" class="btn btn-primary btn-sm">Get the App</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Toggle menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <nav class="mobile-menu" data-mobile-menu aria-label="Mobile Navigation">
+      <a href="#features">Features</a>
+      <a href="#benchmark">Benchmarks</a>
+      <a href="#states">Charging States</a>
+      <a href="#faq">FAQ</a>
+      <a href="#download" class="btn btn-primary">Get the App</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Introduction">
+      <div class="wrap">
+        <div class="hero-pill">
+          <span class="badge">
+            <span class="badge-dot"></span>
+            Android 8.0+ · No Root · Zero Internet Permission
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          Measure real charging watts.<br>
+          <span class="highlight">Benchmark every charger you own.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Android says "Charging" whenever a cable is plugged in, even when battery is dropping. AmpereLab measures true net power entering the cell and ranks your chargers and cables with objective data.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#download" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.222 2.222 0 0 1-.61-.884V2.7c0-.332.22-.646.61-.886zm11.24 11.24l2.127-2.128-11.7-6.755 9.573 8.883zm0 1.892l-9.573 8.883 11.7-6.755-2.127-2.128zm1.056-1.056l3.398-1.962a1.054 1.054 0 0 0 0-1.826L15.905 13.89z"/>
+            </svg>
+            Available on Google Play
+          </a>
+
+          <!-- Video button (trigger modal) -->
+          <button class="btn btn-secondary" type="button" data-open-video data-youtube-id="dQw4w9WgXcQ">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Watch Demo (1 min)
+          </button>
+        </div>
+
+        <!-- Phone Mockups in Fan layout (RawPace style) -->
+        <div class="hero-showcase">
+          <div class="mockup-grid">
+            <div class="phone-mockup mockup-left">
+              <img src="/assets/img/en/2.png" alt="Live wattage telemetry graph" width="240" height="480">
+            </div>
+            <div class="phone-mockup mockup-main">
+              <img src="/assets/img/en/1.png" alt="AmpereLab radial real-time power meter" width="290" height="580">
+            </div>
+            <div class="phone-mockup mockup-right">
+              <img src="/assets/img/en/4.png" alt="Charger ranking benchmark list" width="240" height="480">
+            </div>
+          </div>
+        </div>
+
+        <!-- Highlights Strip -->
+        <div class="features-strip">
+          <div class="strip-item">
+            <svg class="strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <div class="strip-text">
+              <h4>Real Signed Power</h4>
+              <p>Instant net wattage (+ or -) entering the battery cell.</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <svg class="strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <div class="strip-text">
+              <h4>Screen-Off Logging</h4>
+              <p>Foreground service continues measuring overnight safely.</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <svg class="strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div class="strip-text">
+              <h4>Pause Exclusion</h4>
+              <p>Adaptive charging & 80% limits never distort your averages.</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <svg class="strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <div class="strip-text">
+              <h4>100% Private</h4>
+              <p>No ads, no tracking SDKs, no Internet permission required.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Features Section -->
+    <section id="features" class="section section-alt" aria-label="Key Features">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-tag">Precision Engineering</div>
+          <h2 class="section-title">Built for battery nerds and everyday users</h2>
+          <p class="section-desc">Stop guessing whether your cheap gas station cable is throttling your fast charger. Get laboratory-grade insights in seconds.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Live Telemetry Card -->
+          <div class="bento-card col-8">
+            <div class="card-content">
+              <h3>Live Telemetry & Radial Power Meter</h3>
+              <p>Watch watts climb and fall as your device negotiates USB Power Delivery protocols. Displays instant voltage (V), current (A), cell temperature (°C), and accumulated watt-hours (Wh) calculated using trapezoidal integration.</p>
+            </div>
+            <div class="card-media">
+              <img src="/assets/img/en/2.png" alt="Live telemetry and 90s graph" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Benchmark Ranking Card -->
+          <div class="bento-card col-4" id="benchmark">
+            <div class="card-content">
+              <h3>Objective Charger Leaderboard</h3>
+              <p>Rank every brick you own by actual pace: <strong>minutes needed to gain 10% battery</strong> and time-weighted average watts.</p>
+            </div>
+            <div class="card-media">
+              <img src="/assets/img/en/4.png" alt="Charger leaderboard" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Screen-off Card -->
+          <div class="bento-card col-4">
+            <div class="card-content">
+              <h3>Overnight Benchmarking</h3>
+              <p>Label each charger, hit start, and lock your phone. The foreground service logs everything without waking your display.</p>
+            </div>
+            <div class="card-media">
+              <img src="/assets/img/en/3.png" alt="Session setup" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Widgets & History Card -->
+          <div class="bento-card col-8">
+            <div class="card-content">
+              <h3>Home Screen Widget, Tile & CSV Export</h3>
+              <p>Check live wattage straight from your Material You home screen widget or Quick Settings tile. Export entire session datasets to CSV with a single tap for desktop analysis.</p>
+            </div>
+            <div class="card-media">
+              <img src="/assets/img/en/5.png" alt="History details and CSV export" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- States Explanation (RawPace style deep dive) -->
+    <section id="states" class="section" aria-label="Charging States">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-tag">Smarter Than Android</div>
+          <h2 class="section-title">Why other apps give misleading numbers</h2>
+          <p class="section-desc">The OS reports «Charging» as long as 5 volts are present, even when battery is dropping. AmpereLab breaks down four distinct physical states:</p>
+        </div>
+
+        <div class="states-table-wrap">
+          <table class="states-table">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Threshold</th>
+                <th>What it really means</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="state-pill state-charging">● Charging</span></td>
+                <td><strong>&gt; 0.5 W</strong> entering battery</td>
+                <td>Power is actively filling your cell. The animated radial gauge reflects instant flow.</td>
+              </tr>
+              <tr>
+                <td><span class="state-pill state-paused">● Charging Paused</span></td>
+                <td>Connected, <strong>~0 W</strong> net</td>
+                <td>Adaptive charging, thermal throttle, or 80% battery protection limit active. <em>Excluded from session average so night tests stay comparable.</em></td>
+              </tr>
+              <tr>
+                <td><span class="state-pill state-losing">● Losing Charge</span></td>
+                <td>Negative net power while plugged in</td>
+                <td>Your phone is consuming more power than the charger or cable can supply. Common in GPS car mounts or faulty cables.</td>
+              </tr>
+              <tr>
+                <td><span class="state-pill state-full">● Battery Full</span></td>
+                <td>100% capacity reached</td>
+                <td>Trickle maintenance mode. The battery is completely topped off.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section section-alt" aria-label="Frequently Asked Questions">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-tag">Got Questions?</div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Does AmpereLab require root or ADB permissions?</summary>
+            <div class="faq-answer">
+              No. AmpereLab reads directly from the standard Android BatteryManager and device sensor counters without requiring root or computer setup via ADB.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does it consume battery while measuring?</summary>
+            <div class="faq-answer">
+              Measuring power takes minimal CPU cycles. When screen is on, the radial gauge renders smoothly at 60 fps. When your screen is turned off during a test, the background foreground service samples periodically with minimal overhead.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Why does the wattage fluctuate while charging?</summary>
+            <div class="faq-answer">
+              Modern smartphones follow charging curves (such as USB-PD PPS). A phone that accepts 30W when empty will taper down to 15W, 8W, and 2W as it approaches 100% or heats up. AmpereLab displays this real-time behavior accurately.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is my data private?</summary>
+            <div class="faq-answer">
+              Yes, 100%. The application doesn't even declare the Android <code>INTERNET</code> permission. No analytics, no crash beacons, no cloud accounts. All your tests stay exclusively on your phone.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="download" class="section" aria-label="Download Call to Action">
+      <div class="wrap">
+        <div class="cta-box">
+          <h2>Ready to test your chargers?</h2>
+          <p>Get AmpereLab today on Google Play and find out which cables and bricks are truly delivering high-speed power.</p>
+          <div class="hero-ctas" style="margin-bottom:0;">
+            <a href="https://play.google.com/store/apps/details?id=com.manu.pixelchargermeter" class="btn btn-primary" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3.609 1.814L13.793 12 3.61 22.186a2.222 2.222 0 0 1-.61-.884V2.7c0-.332.22-.646.61-.886zm11.24 11.24l2.127-2.128-11.7-6.755 9.573 8.883zm0 1.892l-9.573 8.883 11.7-6.755-2.127-2.128zm1.056-1.056l3.398-1.962a1.054 1.054 0 0 0 0-1.826L15.905 13.89z"/>
+              </svg>
+              Download on Google Play
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="brand">
+          <img src="/assets/img/icon.png" alt="AmpereLab Logo" class="brand-icon">
+          <span>AmpereLab</span>
+        </div>
+        <div class="footer-links">
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="https://github.com/manuel2f/PixelChargerMeter" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:contact@amperelab.app">Support & Feedback</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AmpereLab. All rights reserved. Android and Google Play are trademarks of Google LLC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Video Modal (Deferred YouTube load) -->
+  <div class="modal-backdrop" data-video-modal aria-hidden="true" role="dialog" aria-label="Demo Video Player">
+    <div class="modal-content">
+      <button class="modal-close" data-close-video aria-label="Close video">&times;</button>
+      <div data-video-frame style="width:100%;height:100%;"></div>
+    </div>
+  </div>
+</body>
+</html>
