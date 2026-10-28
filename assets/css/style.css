@@ -548,6 +548,56 @@ a {
   display: block;
 }
 
+/* Charge alerts card: text and alert list beside a Wear OS watch */
+.card-split {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.alert-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.alert-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+.alert-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+}
+.alert-list .range {
+  margin-left: auto;
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.watch-mockup {
+  justify-self: center;
+  width: min(100%, 300px);
+  aspect-ratio: 1;
+  padding: 14px;
+  border-radius: 50%;
+  /* Watch bezel: same dark finish in both themes */
+  background: #1b1e1c;
+  box-shadow: var(--shadow-mockup), inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+}
+.watch-mockup img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+}
+
 /* =========================================
    STATES EXPLANATION TABLE (RawPace style)
 ========================================= */
@@ -908,6 +958,9 @@ a {
 @media (max-width: 900px) {
   .col-8, .col-4, .col-6 {
     grid-column: span 12;
+  }
+  .card-split {
+    grid-template-columns: 1fr;
   }
   .mockup-grid {
     flex-direction: column;

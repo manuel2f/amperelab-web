@@ -12,7 +12,7 @@ Diseñada con una estética moderna, minimalista y de alto rendimiento inspirada
 - **Modo Oscuro / Modo Claro:** Detección automática de la preferencia del sistema y botón manual con persistencia en `localStorage`.
 - **Bilingüe (Inglés / Español):** Versión en inglés en la raíz (`/`) y versión en español en (`/es/`).
 - **Showcase de Mockups en abanico:** Presentación visual con las capturas reales de la aplicación.
-- **Bento Grid de funcionalidades:** Tarjetas limpias destacando telemetría en tiempo real, ranking de cargadores, pruebas con pantalla apagada y widget.
+- **Bento Grid de funcionalidades:** Tarjetas limpias destacando telemetría en tiempo real, ranking de cargadores, pruebas con pantalla apagada, widget y avisos de carga con captura en un reloj Wear OS.
 - **Tabla de estados de carga:** Explicación técnica de por qué Android marca «Cargando» erróneamente y qué mide la app.
 - **Modal de vídeo de YouTube diferido:** Carga el vídeo de demostración únicamente cuando el usuario hace clic, sin cookies iniciales ni ralentizar la web.
 - **Política de privacidad integrada:** Disponible en `/privacy/` cumpliendo con los requisitos de Google Play Store.
