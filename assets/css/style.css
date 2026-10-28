@@ -581,6 +581,10 @@ a {
   font-size: 0.85rem;
   white-space: nowrap;
 }
+/* Watch on the left so the two watch cards alternate */
+.card-split-reverse {
+  grid-template-columns: 1fr 1.4fr;
+}
 .watch-mockup {
   justify-self: center;
   width: min(100%, 300px);
@@ -959,7 +963,8 @@ a {
   .col-8, .col-4, .col-6 {
     grid-column: span 12;
   }
-  .card-split {
+  .card-split,
+  .card-split-reverse {
     grid-template-columns: 1fr;
   }
   .mockup-grid {
